@@ -1,0 +1,32 @@
+.nav {
+    color: #455573;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 70px;
+    box-sizing: border-box;
+    box-shadow: rgb(0 0 0 / 20%) 0px 0px 4px 0px;
+    padding: 0 1rem;
+    position: sticky;
+    top: 0;
+}
+
+.nav_leftside {
+    width: 10%;
+}
+
+.nav_rightside {
+    display: flex;
+}
+
+.nav_link {
+    margin: 0.2rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.nav_link:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
