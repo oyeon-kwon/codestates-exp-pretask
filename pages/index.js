@@ -1,15 +1,39 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import axios from 'axios'
 
 // 컴포넌트 import
 import Nav from '../components/nav';
 import Toktok from '../components/toktok';
 
-// Data import
-import user from '../data/user';
-
 export default function Home() {
+
+  const [user, setUser] = useState({})
+  
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/checkin').then((res) => setUser(res.data))
+  }, [])
+
+  const requestCheckInStatusHandler = () => {
+    if(!user.checkInStatus) {
+      // 입실 axios 요청
+      axios.post('http://localhost:3000/api/checkin', {
+          checkInStatus: true
+      }).then((res) => {
+          setUser(res.data)
+      })
+    } 
+    else {
+      // 퇴실 axios 요청
+      axios.post('http://localhost:3000/api/checkin', {
+          checkInStatus: false
+      }).then((res) => {
+          setUser(res.data)
+      })
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +44,7 @@ export default function Home() {
       <Nav />
 
       <main className={styles.main}>
-        <Toktok user={user} />
+        <Toktok user={user} requestCheckInStatusHandler={requestCheckInStatusHandler} />
       </main>
 
       <footer className={styles.footer}>

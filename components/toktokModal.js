@@ -5,22 +5,23 @@ import Image from 'next/image'
 // image import
 import balloon from '../public/img/balloon.svg'
 
-function ToktokModal({ checkIn, setIsCheckIn, name }) {
+function ToktokModal({ user, requestCheckInStatusHandler }) {
 
     const [showCheckoutConfirm, setShowCheckoutConfirm] = useState(false)
 
     const checkInStatusHandler = () => {
-
-        if(checkIn) {
+        if(user.checkInStatus) {
             setShowCheckoutConfirm(true)
         } else {
-            setIsCheckIn(true)
+            // 입실 axios 요청
+            requestCheckInStatusHandler()
         }
     }
 
     const checkOutStatusHandler = () => {
         setShowCheckoutConfirm(false)
-        setIsCheckIn(false)
+        // 퇴실 axios 요청
+        requestCheckInStatusHandler()
     }
 
   return <div className={styles.toktok_modal_container}> 
@@ -33,9 +34,9 @@ function ToktokModal({ checkIn, setIsCheckIn, name }) {
                         <div className={styles.toktok_content_body}>퇴실하면 더 이상{<br />}학습시간이 기록되지 않아요.</div>
                         <button className={styles.toktok_content_button} onClick={checkOutStatusHandler}>네, 퇴실합니다 😊</button>
                     </>
-                    : checkIn ? 
+                    : user.checkInStatus ? 
                     <>
-                        <div>{name}님 안녕하세요! {<br />} 입실 상태입니다.</div>
+                        <div>{user.name}님 안녕하세요! {<br />} 입실 상태입니다.</div>
                         <div className={styles.toktok_toggle} onClick={checkInStatusHandler}>
                             <div className={styles.toktok_toggle_button_on} />
                             <div className={styles.toktok_toggle_on_text}>째깍이 재워 퇴실</div>
@@ -43,7 +44,7 @@ function ToktokModal({ checkIn, setIsCheckIn, name }) {
                     </>
                     : 
                     <>
-                        <div>{name}님 안녕하세요! {<br />} 퇴실 상태입니다. 입실해주세요.</div>
+                        <div>{user.name}님 안녕하세요! {<br />} 퇴실 상태입니다. 입실해주세요.</div>
                         <div className={styles.toktok_toggle} onClick={checkInStatusHandler}>
                             <div className={styles.toktok_toggle_button_off} />
                             <div className={styles.toktok_toggle_off_text}>째깍이 깨워 입실</div>
@@ -51,10 +52,6 @@ function ToktokModal({ checkIn, setIsCheckIn, name }) {
                     </>
                 }
             </div> 
-            
-
-            
-        {/* } */}
     </div>
 }
 
