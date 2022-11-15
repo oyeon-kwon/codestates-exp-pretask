@@ -101,13 +101,13 @@
 
 .toktok_toggle_button_on {
     transform: translateX(118px);
-    transition: 0.4s;
+    transition: all ease 0.2s;
     content: url('../public/img/button-sleep.svg');
 
 }
 
 .toktok_toggle_button_off {
-    transition: 0.4s;
+    transition: all ease 0.2s;
     content: url('../public/img/button-wakeup.svg')
 }
 
@@ -116,12 +116,12 @@
     font-weight: 400;
     font-size: 14px;   
     transform: translateX(-40px);
-    transition: 0.4s;
+    transition: all ease 0.2s;
 }
 
 .toktok_toggle_off_text {
     color: #295CE0;
     font-weight: 400;
     font-size: 14px;
-    transition: 0.4s;
+    transition: all ease 0.2s;
 }

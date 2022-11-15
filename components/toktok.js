@@ -10,17 +10,16 @@ import defaultIcon from '../public/img/default-icon.svg'
 import look from '../public/img/look.svg'
 import sleep from '../public/img/sleep.svg'
 
-function Toktok({ user, requestCheckInStatusHandler }) {
+function Toktok({ user, requestCheckInStatusHandler, isModalOpen, setIsModalOpen }) {
   
     const [isToktokClicked, setIsToktokClicked] = useState(false)
-    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const toktokClickHandler = () => {
         setIsToktokClicked(!isToktokClicked)
         setIsModalOpen(!isModalOpen)
     }
 
-  return <div className={styles.toktok_container}>
+  return <div className={styles.toktok_container} onClick={(e) => {e.stopPropagation();}}>
     {
         isModalOpen ? <ToktokModal user={user} requestCheckInStatusHandler={requestCheckInStatusHandler} /> : null
     }

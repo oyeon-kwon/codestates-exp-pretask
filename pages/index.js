@@ -10,6 +10,7 @@ import Toktok from '../components/toktok';
 export default function Home() {
 
   const [user, setUser] = useState({})
+  const [isModalOpen, setIsModalOpen] = useState(false)
   
   useEffect(() => {
     axios.get('http://localhost:3000/api/checkin').then((res) => setUser(res.data))
@@ -35,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={() => setIsModalOpen(!isModalOpen)}>
       <Head>
         <title>유어클래스 | 코드스테이츠 학습 플랫폼</title>
         <link rel="icon" href="/img/favicon.png" />
@@ -44,7 +45,7 @@ export default function Home() {
       <Nav />
 
       <main className={styles.main}>
-        <Toktok user={user} requestCheckInStatusHandler={requestCheckInStatusHandler} />
+        <Toktok user={user} requestCheckInStatusHandler={requestCheckInStatusHandler} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       </main>
 
       <footer className={styles.footer}>
