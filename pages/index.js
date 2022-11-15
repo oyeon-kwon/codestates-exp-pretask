@@ -7,6 +7,7 @@ import axios from 'axios'
 import Nav from '../components/nav';
 import Toktok from '../components/toktok';
 import Toast from '../components/toast';
+import Footer from '../components/footer';
 
 export default function Home() {
 
@@ -59,10 +60,9 @@ export default function Home() {
         }
         <Toktok user={user} requestCheckInStatusHandler={requestCheckInStatusHandler} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       </main>
+      
+      <Footer />
 
-      <footer className={styles.footer}>
-
-      </footer>
     </div>
   )
 }
