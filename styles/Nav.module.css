@@ -29,3 +29,21 @@
     background-color: #f5f5f5;
     cursor: pointer;
 }
+
+.nav_login {
+    border: 1px solid rgb(69, 85, 115);
+    padding: 6px 15px;
+    border-radius: 5px;
+    width: 90px;
+    height: 40px;
+    box-sizing: border-box;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_login:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
