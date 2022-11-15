@@ -4,6 +4,10 @@ import styles from '../styles/Home.module.css'
 
 // 컴포넌트 import
 import Nav from '../components/nav';
+import Toktok from '../components/toktok';
+
+// Data import
+import user from '../data/user';
 
 export default function Home() {
   return (
@@ -16,9 +20,11 @@ export default function Home() {
       <Nav />
 
       <main className={styles.main}>
+        <Toktok user={user} />
       </main>
 
       <footer className={styles.footer}>
+
       </footer>
     </div>
   )
