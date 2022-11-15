@@ -31,8 +31,8 @@ export default function Home() {
           checkInStatus: true
       }).then((res) => {
           setUser(res.data)
-      })
-      setIsToastOpen(true)
+          setIsToastOpen(true)
+      }).catch((err) => alert('입실 요청에 오류가 발생했습니다.'))
     } 
     else {
       // 퇴실 axios 요청
@@ -40,7 +40,7 @@ export default function Home() {
           checkInStatus: false
       }).then((res) => {
           setUser(res.data)
-      })
+      }).catch((err) => alert('퇴실 요청에 오류가 발생했습니다.'))
     }
   }
 
