@@ -6,15 +6,23 @@ import axios from 'axios'
 // 컴포넌트 import
 import Nav from '../components/nav';
 import Toktok from '../components/toktok';
+import Toast from '../components/toast';
 
 export default function Home() {
 
   const [user, setUser] = useState({})
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isToastOpen, setIsToastOpen] = useState(false)
   
   useEffect(() => {
     axios.get('http://localhost:3000/api/checkin').then((res) => setUser(res.data))
   }, [])
+
+  useEffect(() => {
+    if(isToastOpen) {
+      setTimeout(() => setIsToastOpen(false), 2700);
+    }
+  }, [isToastOpen])
 
   const requestCheckInStatusHandler = () => {
     if(!user.checkInStatus) {
@@ -24,6 +32,7 @@ export default function Home() {
       }).then((res) => {
           setUser(res.data)
       })
+      setIsToastOpen(true)
     } 
     else {
       // 퇴실 axios 요청
@@ -45,6 +54,9 @@ export default function Home() {
       <Nav />
 
       <main className={styles.main}>
+        {
+          isToastOpen ? <Toast setIsToastOpen={setIsToastOpen} /> : null
+        }
         <Toktok user={user} requestCheckInStatusHandler={requestCheckInStatusHandler} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       </main>
 
