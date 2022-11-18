@@ -1,4 +1,3 @@
-
 const courses = [{
     title: '제목입니다.',
     image: 'courseImg',

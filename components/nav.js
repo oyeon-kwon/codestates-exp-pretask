@@ -1,5 +1,5 @@
 import styles from '../styles/Nav.module.css'
-import Logo from '../public/img/favicon.png'
+import urclass from '../public/img/urclass.png'
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -7,7 +7,7 @@ function Nav({ user }) {
   return <div className={styles.nav}>
     <div className={styles.nav_leftside}>
       <Link href='/'>
-        <Image src={Logo} width={80} height={80} alt='logo' />
+        <Image src={urclass} width={127} height={127} alt='logo' />
       </Link>
     </div>
     <div className={styles.nav_rightside}>

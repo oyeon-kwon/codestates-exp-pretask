@@ -12,7 +12,7 @@ function CoursePage() {
         courses.map((course) => {
             return (
                 <div className={styles.course_page_content_box}>
-                    <div className={styles.course_page_content_image} width={500} height={250} alt='courseimg'/>
+                    <div className={styles.course_page_content_image} alt='courseimg'/>
                     <div className={styles.course_page_content_title}>{course.title}</div>
                     <div className={styles.course_page_content_desc}>{course.desc}</div>
                 </div>

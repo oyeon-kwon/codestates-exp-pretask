@@ -12,7 +12,8 @@
 
 .course_page_content_image {
     border-radius: 10px;
-    content: url('../public/img/courseimg.png')
+    content: url('../public/img/courseimg.png');
+    border: 1px solid #ededed;
 }
 
 .course_page_content_title {
