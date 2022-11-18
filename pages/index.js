@@ -16,7 +16,7 @@ export default function Home() {
   const [isToastOpen, setIsToastOpen] = useState(false)
   
   useEffect(() => {
-    axios.get('http://localhost:3000/api/checkin').then((res) => setUser(res.data))
+    axios.get('http://localhost:3000/api/userdata').then((res) => setUser(res.data))
   }, [])
 
   useEffect(() => {
@@ -27,22 +27,28 @@ export default function Home() {
 
   const requestCheckInStatusHandler = () => {
     if(!user.checkInStatus) {
-      // 입실 axios 요청
+      // !입실 axios 요청
       axios.post('http://localhost:3000/api/checkin', {
-          checkInStatus: true
+          checkInStatus: true,
+          checkInTime: new Date().toLocaleString()
       }).then((res) => {
           setUser(res.data)
           setIsToastOpen(true)
       }).catch((err) => alert('입실 요청에 오류가 발생했습니다.'))
     } 
     else {
-      // 퇴실 axios 요청
+      // !퇴실 axios 요청
       axios.post('http://localhost:3000/api/checkin', {
-          checkInStatus: false
+        checkInStatus: false,
+        checkOutTime: new Date().toLocaleString()
       }).then((res) => {
           setUser(res.data)
       }).catch((err) => alert('퇴실 요청에 오류가 발생했습니다.'))
     }
+  }
+
+  const getCheckInLog = () => {
+    axios.get('http://localhost:3000/api/userdata').then((res) => setUser(res.data))
   }
 
   return (
@@ -58,7 +64,7 @@ export default function Home() {
         {
           isToastOpen ? <Toast setIsToastOpen={setIsToastOpen} /> : null
         }
-        <Toktok user={user} requestCheckInStatusHandler={requestCheckInStatusHandler} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+        <Toktok user={user} requestCheckInStatusHandler={requestCheckInStatusHandler} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} getCheckInLog={getCheckInLog} />
       </main>
       
       <Footer />

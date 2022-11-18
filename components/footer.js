@@ -7,7 +7,7 @@ import codestates_logo from '../public/img/codestates_logo.png';
 function Footer() {
   return <div className={styles.footer}>
     <div className={styles.footer_left}>
-        <Image src={codestates_logo} width={130} />
+        <Image src={codestates_logo} width={130} alt='footer' />
         <div className={styles.footer_left_desc}>
             <div>주식회사 코드스테이츠 | 사업자번호: 703-88-00878 | 대표자명: 김인기</div>
             <div>서울특별시 서초구 서초대로 396, 강남빌딩 20층(스파크플러스 강남 2호점)</div>
