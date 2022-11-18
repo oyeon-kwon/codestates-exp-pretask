@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/CoursePage.module.css'
-
-import courses from './api/data/courses';
-// todo: 위의 데이터 받아오는거 axios로 변경해야해
+import styles from '../styles/CoursePage.module.css';
+import axios from 'axios';
 
 function CoursePage() {
+
+    const [courses, setCourses] = useState([])
+
+    useEffect(() => {
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then((res) => setCourses(res.data))
+    }, [])
+
 
 
   return <div className={styles.course_page_container}>
@@ -12,14 +18,13 @@ function CoursePage() {
         courses.map((course) => {
             return (
                 <div className={styles.course_page_content_box}>
-                    <div className={styles.course_page_content_image} alt='courseimg'/>
+                    <div className={styles.course_page_content_image} />
                     <div className={styles.course_page_content_title}>{course.title}</div>
-                    <div className={styles.course_page_content_desc}>{course.desc}</div>
+                    <div className={styles.course_page_content_desc}>{course.body}</div>
                 </div>
             )
         })
     }
-
     </div>
 }
 
