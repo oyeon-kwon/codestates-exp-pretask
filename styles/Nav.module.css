@@ -10,6 +10,8 @@
     padding: 0 1rem;
     position: sticky;
     top: 0;
+    background-color: #ffffff;
+    font-size: 0.9rem;
 }
 
 .nav_leftside {
