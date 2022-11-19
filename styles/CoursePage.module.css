@@ -1,13 +1,27 @@
 .course_page_container {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.course_page_title {
+    margin-top: 3rem;
+    color: #455573;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.course_page_box {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
     font-family: 'Spoqa Han Sans Neo';
-    margin: 5rem auto;
+    margin-top: 3rem;
+    justify-content: space-between;
 }
 
 .course_page_content_box {
-    margin: 1rem;
+    margin-bottom: 2rem;
     width: 22rem;
     display: flex;
     flex-direction: column;

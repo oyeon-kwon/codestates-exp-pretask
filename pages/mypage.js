@@ -8,7 +8,6 @@ import blog from '../public/img/blog.svg'
 import github from '../public/img/github.svg'
 import mail from '../public/img/mail.svg'
 
-// todo axios 로 변경
 import portfolio from './api/data/portfolio';
 
 function Mypage() {
