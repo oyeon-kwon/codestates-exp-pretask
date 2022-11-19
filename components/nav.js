@@ -18,7 +18,7 @@ function Nav({ user }) {
           <div className={styles.nav_link}>수강 중인 코스</div>
         </Link>
         <Link href='/mypage'>
-          <div className={styles.nav_link}>마이 페이지</div>
+          <div className={styles.nav_mypage_icon}></div>
         </Link>
         </>
         :

@@ -19,6 +19,8 @@
 
 .nav_rightside {
     display: flex;
+    align-items: center;
+    margin-right: 1rem;
 }
 
 .nav_link {
@@ -29,6 +31,16 @@
 
 .nav_link:hover {
     background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.nav_mypage_icon {
+    content: url(../public/img/mypage.svg);
+    width: 25px;
+    margin: 0 1rem;
+}
+
+.nav_mypage_icon:hover {
     cursor: pointer;
 }
 

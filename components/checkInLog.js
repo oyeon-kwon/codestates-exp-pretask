@@ -5,7 +5,9 @@ import Image from 'next/image'
 import back from '../public/img/back.svg'
 import closeBlack from '../public/img/close-black.svg'
 
-function CheckInLog({ user, setShowCheckInLog, setIsModalOpen }) {
+function CheckInLog(props) {
+
+  const { user, setShowCheckInLog, setIsModalOpen } = props
 
   const backButtonHandler = () => {
     setShowCheckInLog(false)
@@ -41,12 +43,12 @@ function CheckInLog({ user, setShowCheckInLog, setIsModalOpen }) {
                                     checkInTime.checkInTime ? 
                                     <tr className={styles.toktok_extended_modal_table_body_row}>
                                         <td className={styles.toktok_extended_modal_table_body_row_child}>입실</td>
-                                        <td className={styles.toktok_extended_modal_table_body_row_child}>{checkInTime.checkInTime.slice(14, 22)}</td>
+                                        <td className={styles.toktok_extended_modal_table_body_row_child}>{checkInTime.checkInTime.slice(14, 21)}</td>
                                     </tr>
                                     :
                                     <tr className={styles.toktok_extended_modal_table_body_row}>
                                         <td className={styles.toktok_extended_modal_table_body_row_child}>퇴실</td>
-                                        <td className={styles.toktok_extended_modal_table_body_row_child}>{checkInTime.checkOutTime.slice(14, 22)}</td>
+                                        <td className={styles.toktok_extended_modal_table_body_row_child}>{checkInTime.checkOutTime.slice(14, 21)}</td>
                                     </tr>
                                 }
                                 </>

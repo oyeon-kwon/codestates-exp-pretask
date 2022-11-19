@@ -8,8 +8,10 @@ import CheckInLog from './checkInLog';
 // image import
 import balloon from '../public/img/balloon.svg'
 
-function ToktokModal({ user, requestCheckInStatusHandler, getCheckInLog, setIsModalOpen }) {
+function ToktokModal(props) {
 
+    const { user, requestCheckInStatusHandler, getCheckInLog, setIsModalOpen } = props
+    
     const [showCheckoutConfirm, setShowCheckoutConfirm] = useState(false)
     const [showCheckInLog, setShowCheckInLog] = useState(false)
 

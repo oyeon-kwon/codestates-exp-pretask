@@ -10,7 +10,9 @@ import defaultIcon from '../public/img/default-icon.svg'
 import look from '../public/img/look.svg'
 import sleep from '../public/img/sleep.svg'
 
-function Toktok({ user, requestCheckInStatusHandler, isModalOpen, setIsModalOpen, getCheckInLog }) {
+function Toktok(props) {
+
+    const { user, requestCheckInStatusHandler, isModalOpen, setIsModalOpen, getCheckInLog } = props
   
     const [isToktokClicked, setIsToktokClicked] = useState(false)
 
