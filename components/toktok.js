@@ -48,7 +48,7 @@ function Toktok(props) {
             width={100}
             height={100}
             onClick={toktokClickHandler}
-            alt="icon"
+            alt="icon1"
           />
         ) : user.checkInStatus ? (
           <Image
@@ -56,7 +56,7 @@ function Toktok(props) {
             width={100}
             height={100}
             onClick={toktokClickHandler}
-            alt="icon"
+            alt="icon2"
           />
         ) : (
           <Image
@@ -64,7 +64,7 @@ function Toktok(props) {
             width={100}
             height={100}
             onClick={toktokClickHandler}
-            alt="icon"
+            alt="icon3"
           />
         )}
       </div>

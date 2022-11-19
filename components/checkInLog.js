@@ -46,12 +46,11 @@ function CheckInLog(props) {
         <div className={styles.toktok_extended_modal_table_head}>시간</div>
       </div>
       <div className={styles.toktok_border} />
-      <table>
-        <tbody className={styles.toktok_extended_modal_table_body}>
           {user.checkInLog.length !== 0 ? (
-            user.checkInLog.map((checkInTime) => {
+            user.checkInLog.map((checkInTime, i) => {
               return (
-                <>
+                <table key={i}>
+                <tbody className={styles.toktok_extended_modal_table_body}>
                   {checkInTime.checkInTime ? (
                     <tr className={styles.toktok_extended_modal_table_body_row}>
                       <td
@@ -66,7 +65,7 @@ function CheckInLog(props) {
                           styles.toktok_extended_modal_table_body_row_child
                         }
                       >
-                        {checkInTime.checkInTime.slice(14, 21)}
+                        {checkInTime.checkInTime.slice(14, 22)}
                       </td>
                     </tr>
                   ) : (
@@ -83,11 +82,12 @@ function CheckInLog(props) {
                           styles.toktok_extended_modal_table_body_row_child
                         }
                       >
-                        {checkInTime.checkOutTime.slice(14, 21)}
+                        {checkInTime.checkOutTime.slice(14, 22)}
                       </td>
                     </tr>
                   )}
-                </>
+                </tbody>
+                </table>
               );
             })
           ) : (
@@ -95,8 +95,6 @@ function CheckInLog(props) {
               내역 없음
             </div>
           )}
-        </tbody>
-      </table>
     </div>
   );
 }

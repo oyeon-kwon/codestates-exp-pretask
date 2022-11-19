@@ -15,7 +15,7 @@ function Mypage() {
     <div className={styles.mypage_container}>
       <div className={styles.mypage_introduce_box}>
         <div className={styles.mypage_introduce_image_box}>
-          <Image src={oyeon} width={250} height={250} />
+          <Image src={oyeon} width={250} height={250} alt="profile"/>
           <div className={styles.mypage_introduce_icon_box}>
             <a href="https://github.com/oyeon-kwon" target="_blank">
               <Image
@@ -23,7 +23,8 @@ function Mypage() {
                 width={30}
                 height={30}
                 className={styles.mypage_introduce_icon}
-              />
+                alt="icon1"
+                />
             </a>
             <a href="mailto:rnjsdhdus93@gmail.com">
               <Image
@@ -31,7 +32,8 @@ function Mypage() {
                 width={30}
                 height={30}
                 className={styles.mypage_introduce_icon}
-              />
+                alt="icon2"
+                />
             </a>
             <a href="https://o-yeon.tistory.com/" target="_blank">
               <Image
@@ -39,7 +41,8 @@ function Mypage() {
                 width={30}
                 height={30}
                 className={styles.mypage_introduce_icon}
-              />
+                alt="icon3"
+                />
             </a>
           </div>
         </div>
@@ -67,17 +70,18 @@ function Mypage() {
         <div className={styles.mypage_portfolio_contentlist_box}>
           {portfolio.map((project) => {
             return (
-              <>
                 <a
                   className={styles.mypage_portfolio_content_box}
                   href={project.link}
                   target="_blank"
+                  key={project.id}
                 >
                   <Image
                     className={styles.mypage_portfolio_content_image}
                     src={project.image}
                     width={100}
                     height={70}
+                    alt="content"
                   />
                   <div className={styles.mypage_portfolio_content_title}>
                     {project.title}
@@ -86,7 +90,6 @@ function Mypage() {
                     {project.desc}
                   </div>
                 </a>
-              </>
             );
           })}
         </div>

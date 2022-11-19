@@ -18,7 +18,7 @@ function CoursePage() {
       <div className={styles.course_page_box}>
         {courses.map((course) => {
           return (
-            <div className={styles.course_page_content_box}>
+            <div className={styles.course_page_content_box} key={course.id}>
               <div className={styles.course_page_content_image} />
               <div className={styles.course_page_content_title}>
                 {course.title}

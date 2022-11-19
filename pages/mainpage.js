@@ -40,7 +40,7 @@ function MainPage() {
         <div className={styles.main_page_contentlist_box}>
           {magazines.map((magazine) => {
             return (
-              <div className={styles.main_page_content_box}>
+              <div className={styles.main_page_content_box} key={magazine.id}>
                 <div className={styles.main_page_content_image} />
                 <div className={styles.main_page_content_title}>
                   {magazine.title}
