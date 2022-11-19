@@ -17,14 +17,14 @@ function ToktokModal({ user, requestCheckInStatusHandler, getCheckInLog, setIsMo
         if(user.checkInStatus) {
             setShowCheckoutConfirm(true)
         } else {
-            // 입실 axios 요청
+            // 입실 요청
             requestCheckInStatusHandler()
         }
     }
 
     const checkOutStatusHandler = () => {
         setShowCheckoutConfirm(false)
-        // 퇴실 axios 요청
+        // 퇴실 요청
         requestCheckInStatusHandler()
     }
 

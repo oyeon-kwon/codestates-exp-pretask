@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/MainPage.module.css'
-import axios from 'axios'
+
+// axios function import
+import { getJsonplaceholderPosts } from '../apiRequest/apiRequest';
 
 function MainPage() {
 
     const [magazines, setMagizines] = useState([])
 
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        getJsonplaceholderPosts()
         .then((res) => setMagizines(res.data.slice(0, 15)))
     }, [])
 

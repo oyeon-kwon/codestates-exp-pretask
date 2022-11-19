@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/CoursePage.module.css';
-import axios from 'axios';
+
+// axios function import
+import { getJsonplaceholderPosts } from '../apiRequest/apiRequest';
 
 function CoursePage() {
 
     const [courses, setCourses] = useState([])
 
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        // 더미 포스트 요청
+        getJsonplaceholderPosts()
         .then((res) => setCourses(res.data.slice(0, 15)))
     }, [])
 
