@@ -1,63 +1,60 @@
 .nav {
-    color: #455573;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 70px;
-    box-sizing: border-box;
-    box-shadow: rgb(0 0 0 / 20%) 0px 0px 4px 0px;
-    padding: 0 1rem;
-    position: sticky;
-    top: 0;
-    background-color: #ffffff;
-    font-size: 0.9rem;
-}
-
-.nav_leftside {
+  color: #455573;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 70px;
+  box-sizing: border-box;
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 4px 0px;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  font-size: 0.9rem;
 }
 
 .nav_rightside {
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
 }
 
 .nav_link {
-    margin: 0.2rem;
-    padding: 1rem;
-    border-radius: 10px;
+  margin: 0.2rem;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .nav_link:hover {
-    background-color: #f5f5f5;
-    cursor: pointer;
+  background-color: #f5f5f5;
+  cursor: pointer;
 }
 
 .nav_mypage_icon {
-    content: url(../public/img/mypage.svg);
-    width: 25px;
-    margin: 0 1rem;
+  content: url(../public/img/mypage.svg);
+  width: 25px;
+  margin: 0 1rem;
 }
 
 .nav_mypage_icon:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .nav_login {
-    border: 1px solid rgb(69, 85, 115);
-    padding: 6px 15px;
-    border-radius: 5px;
-    width: 90px;
-    height: 40px;
-    box-sizing: border-box;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  border: 1px solid rgb(69, 85, 115);
+  padding: 6px 15px;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav_login:hover {
-    cursor: pointer;
-    background-color: #f5f5f5;
+  cursor: pointer;
+  background-color: #f5f5f5;
 }
