@@ -8,12 +8,12 @@ function MainPage() {
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then((res) => setMagizines(res.data))
+        .then((res) => setMagizines(res.data.slice(0, 15)))
     }, [])
 
 
   return <div className={styles.main_page_container}>
-    <div className={styles.main_page_website_link_box}>
+    <a href='https://codestates.com/' target='_blank' className={styles.main_page_website_link_box}>
         <div className={styles.main_page_website_link_box_left}>
             <div className={styles.main_page_website_link_box_left_title}>코드스테이츠 웹사이트 바로가기</div>            
             <div className={styles.main_page_website_link_box_left_desc}>코드스테이츠와 함께 새로운 커리어를 시작하세요.</div>            
@@ -22,7 +22,7 @@ function MainPage() {
             <div className={styles.main_page_website_link_box_right_text}>웹사이트 바로가기</div>
             <div className={styles.main_page_website_link_box_right_arrow}></div>
         </div>
-    </div>
+    </a>
     <div>
         <div className={styles.main_page_contentList_title}>Magazine</div>
         <div className={styles.main_page_contentlist_box}>

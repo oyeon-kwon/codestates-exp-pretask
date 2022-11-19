@@ -8,7 +8,7 @@ function CoursePage() {
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
-        .then((res) => setCourses(res.data))
+        .then((res) => setCourses(res.data.slice(0, 15)))
     }, [])
 
 
