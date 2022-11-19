@@ -17,11 +17,10 @@
   flex-wrap: wrap;
   font-family: "Spoqa Han Sans Neo";
   margin-top: 3rem;
-  justify-content: space-between;
 }
 
 .course_page_content_box {
-  margin-bottom: 2rem;
+  margin: 0 1rem 2rem 0;
   width: 22rem;
   display: flex;
   flex-direction: column;

@@ -69,11 +69,10 @@
 .main_page_contentlist_box {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .main_page_content_box {
-  margin-bottom: 2rem;
+  margin: 0 1rem 2rem 0;
   width: 22rem;
   display: flex;
   flex-direction: column;
