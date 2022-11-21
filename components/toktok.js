@@ -19,10 +19,7 @@ function Toktok(props) {
     getCheckInLog,
   } = props;
 
-  const [isToktokClicked, setIsToktokClicked] = useState(false);
-
   const toktokClickHandler = () => {
-    setIsToktokClicked(!isToktokClicked);
     setIsModalOpen(!isModalOpen);
   };
 
@@ -42,7 +39,7 @@ function Toktok(props) {
         />
       ) : null}
       <div className={styles.toktok}>
-        {user.checkInStatus && isToktokClicked ? (
+        {user.checkInStatus && isModalOpen ? (
           <Image
             src={look}
             width={100}
