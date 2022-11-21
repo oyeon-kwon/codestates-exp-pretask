@@ -65,7 +65,7 @@ function CheckInLog(props) {
                           styles.toktok_extended_modal_table_body_row_child
                         }
                       >
-                        {checkInTime.checkInTime.slice(14, 21)}
+                        {checkInTime.checkInTime.slice(14, 22)}
                       </td>
                     </tr>
                   ) : (
@@ -82,7 +82,7 @@ function CheckInLog(props) {
                           styles.toktok_extended_modal_table_body_row_child
                         }
                       >
-                        {checkInTime.checkOutTime.slice(14, 21)}
+                        {checkInTime.checkOutTime.slice(14, 22)}
                       </td>
                     </tr>
                   )}
